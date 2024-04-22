@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/detail/detail",
+    "pages/statistics/statistics",
+    "pages/mine/mine",
+    "pages/add/add",
+    "pages/modify/modify",
+    "pages/introduce/introduce"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFCA28",
+    "navigationBarTitleText": "班费记账本",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-share-sheet": "@vant/weapp/share-sheet/index",
+    "van-rate": "@vant/weapp/rate/index"
+  },
+  "tabBar": {
+    "selectedColor": "f4ea2a",
+    "list": [
+      {
+        "pagePath": "pages/detail/detail",
+        "text": "明细",
+        "iconPath": "./images/mx.png",
+        "selectedIconPath": "./images/mx-selected.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "./images/statis.png",
+        "selectedIconPath": "./images/statis-selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./images/my.png",
+        "selectedIconPath": "./images/my-selected.png"
+      }
+    ]
+  },
+  "lazyCodeLoading": "requiredComponents"
+}

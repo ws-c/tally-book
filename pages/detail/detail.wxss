@@ -1,0 +1,95 @@
+/* pages/detail/detail.wxss */
+.top{
+	height: 200rpx;
+	background-color: #FFCA28;
+	padding: 10rpx 20rpx;
+}
+.sum{
+	font-size: larger;
+	color: #6b6b6b;
+}
+.money{
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+.income{
+	color: white;
+	background-color: #91D300;
+	border-radius: 15rpx;
+	width: 20%;
+	text-align: center;
+}
+.expenditure{
+		color: white;
+		background-color: #C87D2F;
+		border-radius: 15rpx;
+		width: 20%;
+		text-align: center;
+}
+.box{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	height: 50rpx;
+}
+van-button{
+	position: relative;
+	top: -20rpx;
+	left: 50rpx;
+}
+.list-box{
+	margin: 30rpx 20rpx;
+	padding: 0 10rpx 20rpx 10rpx;
+	border: #efefef 1rpx solid;
+	border-radius: 20rpx;
+	height: 950rpx;
+	width: 91%;
+	background-color: #fff;
+}
+.list{
+	padding: 0 30rpx 5rpx 20rpx;
+	height: 150rpx;
+	border-bottom: 1rpx solid #d6d6d6;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.list .left{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.left image{
+	height: 60rpx;
+	width: 60rpx;
+}
+.left .list-info{
+	margin: 0 30rpx;
+}
+.list-date{
+	font-size: small;
+	color: rgb(165, 165, 165);
+}
+.right text{
+	font-size: 40rpx;
+}
+scroll-view ::-webkit-scrollbar {
+	display:none;
+	width:0;
+	height:0;
+	color:transparent;
+}
+.add{
+	position: fixed;
+	right: 50rpx;
+	bottom: 50rpx;
+	height: 120rpx;
+	width: 120rpx;
+}
+.yellow{
+	color: #ffbf00;
+}
+.cateActive{
+	opacity: 0.5;
+}

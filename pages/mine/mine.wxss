@@ -1,0 +1,115 @@
+/* pages/mine/mine.wxss */
+
+page {
+	background-color: #F7F8FA;
+}
+
+.box {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 250rpx;
+	background-color: #FFCA28;
+	padding: 0 30rpx;
+}
+
+.box .login {
+	line-height: 100rpx;
+	text-align: center;
+	height: 100rpx;
+	width: 300rpx;
+	color: white;
+	font-size: 40rpx;
+	border: 1rpx solid;
+	border-radius: 20rpx;
+}
+.saying{
+	height: 50rpx;
+	text-align: center;
+	padding-bottom: 15rpx;
+	background-color: #FFCA28;
+	color: rgba(0,0,0,0.3);
+}
+.left {
+	display: flex;
+	align-items: center;
+}
+
+.left .head-photo {
+	height: 120rpx;
+	width: 120rpx;
+	border-radius: 50rpx;
+}
+
+.left .pickname {
+	margin-left: 50rpx;
+	font-size: 50rpx;
+}
+
+.refresh {
+	float: right;
+	height: 40rpx;
+	width: 40rpx;
+}
+
+.setting {
+	display: flex;
+	justify-content: flex-start;
+	margin: 30rpx 0 30rpx 30rpx;
+	color: #8F9CA2;
+	height: 40rpx;
+	line-height: 40rpx;
+}
+.setting .i{
+	position: relative;
+	top: 5rpx;
+	height: 35rpx;
+	width: 35rpx;
+}
+.group{
+	margin: 0 30rpx;
+	padding: 0 20rpx;
+	border: 1rpx  ;
+	border-radius: 20rpx;
+	background-color: #fff;
+}
+.group .list:last-child{
+	border: 0;
+}
+.list{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100rpx;
+	border-bottom: 1rpx solid rgba(0,0,0,0.1);
+	padding: 0 20rpx;
+}
+.list .left{
+	font-size: 30rpx;
+	line-height: 100rpx;
+}
+.rate{
+	padding: 50rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.rate .submit{
+	text-align: center;
+	margin-top: 50rpx;
+	font-size: 40rpx;
+	line-height: 50rpx;
+	height: 50rpx;
+	width: 100rpx;
+	border: 1rpx solid ;
+}
+.version{
+	position: fixed;
+	left: 50%;
+	bottom: 15rpx;
+	transform: translateX(-50%);
+	font-size: 25rpx;
+	color: rgb(126, 126, 126);
+}

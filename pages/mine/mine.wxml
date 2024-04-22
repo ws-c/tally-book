@@ -1,0 +1,54 @@
+<!--pages/mine/mine.wxml-->
+<!--头像框模块-->
+
+	<view class="box">
+	<view class="left">
+		<view bindtap="getUserProfile" hidden="{{active}}" class="login">点击一键登录</view>
+		<image class="head-photo" src="{{avatarUrl}}" hidden="{{avatarUrl == ''}}"></image>
+		<text class="pickname" hidden="{{avatarUrl == ''}}">{{nickName}}</text>
+	</view>
+	<image src="../../images/refresh.png" class="refresh" bindtap="getUserProfile" hidden="{{avatarUrl == ''}}"></image>
+	
+</view>
+<view class="saying">{{saying}}</view>
+
+
+	<!--关于模块-->
+	<view class="setting">
+		<image src="../../images/shuxian.png" class="i"></image>
+		关于
+		
+	</view>
+	<view class="group">
+		<view class="list" bindtap="toIntroduce">
+			<view class="left">介绍</view>
+			<view class="right">
+				<van-icon name="arrow" color="gray" />
+			</view>
+		</view>
+		<view class="list" bindtap="showPopup">
+			<view class="left">评价</view>
+			<view class="right">
+				<van-icon name="arrow" color="gray" />
+			</view>
+		</view>
+		<view class="list" bindtap="onClick">
+			<view class="left">分享</view>
+			<view class="right">
+				<van-icon name="arrow" color="gray" />
+			</view>
+		</view>
+	</view>
+
+	<view class="version">Version 1.3.2</view>
+
+<!--分享组件-->
+<van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onSelect" bind:close="onClose" />
+<!--评价模块-->
+<van-popup show="{{ showRate }}" bind:close="onCloseRate" custom-style="height: 30%;" position="bottom" round closeable>
+	<view class="rate">
+		<text style="font-size: 40rpx; margin-bottom: 30rpx;">您是否对本产品满意？</text>
+		<van-rate value="{{ valueRate }}" bind:change="onChangeRates" size="50rpx" />
+		<view class="submit" bindtap="submitRate">提交</view>
+	</view>
+</van-popup>

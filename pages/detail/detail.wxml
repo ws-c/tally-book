@@ -1,0 +1,55 @@
+<!--pages/detail/detail.wxml-->
+
+<!--头部模块-->
+<view class="top">
+	<!--余额-->
+	<view class="sum">余额
+		<view style="color: black; margin: 5rpx 0; font-size: 40rpx;">{{sum}}</view>
+	</view>
+
+	<!--收入和支出-->
+	<view class="box">
+		<view class="money">
+			<view class="income">收入</view><text>{{totalIncome}}</text>
+			<view class="expenditure">支出</view><text>{{totalExpenditure}}</text>
+		</view>
+		<!--日历选择器-->
+		<van-button bind:click="showPopup" color='#FFCA28'>
+			{{time.confirmPicker(currentDate)}}
+			<van-icon name="arrow-down" size="10px" />
+		</van-button>
+		<van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+			<van-datetime-picker type="year-month" value="{{ currentDate }}" bind:confirm="onInput" bind:cancel="onClose" />
+		</van-popup>
+	</view>
+</view>
+<!--搜索框模块-->
+<van-search value="{{ searchValue }}" placeholder="请输入搜索关键词" bind:search="onSearch" shape="round" show-action bind:cancel="onCancel">
+
+</van-search>
+
+<!--列表模块-->
+<scroll-view class="list-box" scroll-y="true" bindtouchstart="onMove" bindtouchend="endMove" refresher-enabled="true" bindrefresherrefresh="onScrollRefresh" refresher-triggered="{{triggered}}">
+	<view class="list" wx:for="{{listData}}" wx:key="id" bindlongpress="handleLongPress" data-id="{{item._id}}">
+		<view class="left">
+			<image src="{{imgSrcList[item.iconId]}}"></image>
+			<view class="list-info">
+				<text>{{item.name}}</text>
+				<view class="list-date">{{time.confirmPickerNYR(item.date)}}</view>
+			</view>
+		</view>
+		<view class="right">
+			<!--动态class判断和插值表达式判断-->
+			<text class="{{item.money >0 ? 'yellow' : ''}}">{{item.money > 0 ? "+"+item.money : item.money}}</text>
+		</view>
+	</view>
+</scroll-view>
+
+<!--添加模块-->
+<navigator url="/pages/add/add">
+	<image class="add {{cateActive ? 'cateActive' : ''}}" src="../../images/add.png"></image>
+</navigator>
+
+
+<!--引用wxs脚本-->
+<wxs src='../../tool.wxs' module='time'></wxs>

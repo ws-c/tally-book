@@ -1,0 +1,26 @@
+<!--pages/statistics/statistics.wxml-->
+<!--总数模块-->
+<view class="sum-box">
+	<text style="color: #303030;">{{type == 'outcome' ? '共支出': '共收入'}}</text>
+	<view class="num">{{type == 'outcome' ? '￥'+totalExpenditure : '￥'+totalIncome}}</view>
+</view>
+<!--切换栏模块-->
+<view class="wrap">
+	<view class="btn {{type=='outcome' ? 'on' : ''}}" data-type="outcome" bindtap="changeType">支出</view>
+	<view style="color: #efefef;">|</view>
+	<view class="btn {{type=='income' ? 'on' : ''}}" data-type="income" bindtap="changeType">收入</view>
+</view>
+<!--统计模块-->
+<view style="	margin-left: 30rpx; margin-bottom: 50rpx;font-size: 40rpx;">
+	<text class="length">{{type == 'outcome' ? '支出笔数' : '收入笔数'}}</text>
+	<text>{{type == 'outcome' ? moneyLength.outcomeLength : moneyLength.incomeLength}}</text>
+</view>
+<view class="icon">
+	<image src="../../images/shuxian.png" class="i"></image>
+	分类统计</view>
+<view class="my-chart">
+	<ec-canvas id="mychart-dom" canvas-id="mychart" ec="{{ec}}"></ec-canvas>
+</view>
+<view class="my-chart">
+	<ec-canvas id="mychart-dom2" canvas-id="mychart2" ec="{{ec2}}"></ec-canvas>
+</view>

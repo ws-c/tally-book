@@ -1,0 +1,15 @@
+function confirmPicker(time) {
+	// 时间转化 年月
+	var date = getDate(+time)
+	return (date.getFullYear()) + "-" + (date.getMonth() + 1 )
+}
+function confirmPickerNYR(time) {
+	// 时间转化 年月日
+	var date = getDate(+time)
+	return (date.getFullYear()) + "-" + (date.getMonth() + 1 + "-" + (date.getDate()))
+}
+
+module.exports = {
+	confirmPicker:confirmPicker,
+	confirmPickerNYR:confirmPickerNYR
+}

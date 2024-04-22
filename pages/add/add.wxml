@@ -1,0 +1,91 @@
+<!--pages/add/add.wxml-->
+<van-tabs color="#FFCA28"  bind:click="onClickTab" swipeable>
+	<van-tab title="支出">
+		<!--图片类型列表输入框-->
+		<view class="img-list">
+			<view class="img-box" bindtap="showMask" data-num="{{0}}" style="background-color:{{backGroundColorList[0].index}}">
+				<image src="../../images/icon_clothes.png" alt="" /><text>服装</text>
+			</view>
+			<view class="img-box" bindtap="showMask" data-num="{{1}}" style="background-color:{{backGroundColorList[1].index}}">
+				<image src="../../images/icon_food.png" alt="" /><text>食物</text>
+			</view>
+			<view class="img-box" bindtap="showMask" data-num="{{2}}" style="background-color:{{backGroundColorList[2].index}}">
+				<image src="../../images/icon_other.png" alt="" /><text>娱乐</text>
+			</view>
+			<view class="img-box" bindtap="showMask" data-num="{{3}}" style="background-color:{{backGroundColorList[3].index}}">
+				<image src="../../images/icon_shopping.png" alt="" /><text>购物</text>
+			</view>
+			<view class="img-box" bindtap="showMask" data-num="{{4}}" style="background-color:{{backGroundColorList[4].index}}">
+				<image src="../../images/icon_traffic.png" alt="" /><text>交通</text>
+			</view>
+		</view>
+		<!--名字输入框-->
+		<van-field model:value="{{ inputNameValue }}" placeholder="请输入名字"  hold-keyboard="true" focus="true" >
+			<image slot="left-icon" src="../../images/name.png"></image>
+		</van-field>
+		<!--数目输入框-->
+		<van-field model:value="{{ inputMoneyValue }}" placeholder="请输入数目" type="number" hold-keyboard="true" focus="true">
+			<image slot="left-icon" src="../../images/money.png"></image>
+		</van-field>
+		<!--日历选择器-->
+		<view class="datetime">
+			<image src="../../images/datetime.png"></image>
+			<text>日期：</text>
+			<van-button class="time-picker" bind:click="showPopup" round hairline>
+			{{time.confirmPickerNYR(currentDate)}}
+			<van-icon name="arrow-down" size="10px" />
+		</van-button>
+		<van-popup show="{{ show }}" bind:close="onClose" position="top">
+			<van-datetime-picker type="date" value="{{ currentDate }}" bind:confirm="onInput" bind:cancel="onClose" />
+		</van-popup>
+		</view>
+		<!--保存按钮-->
+		<van-button type="primary" color="#00A03E" block bindtap="backToDetail">保存</van-button>
+	</van-tab>
+
+	<van-tab title="收入">
+		<!--图片类型列表输入框-->
+		<view class="img-list">
+			<view class="img-box" bindtap="showMask" data-num="{{0}}" style="background-color:{{backGroundColorList[0].index}}">
+				<image src="../../images/icon_donate.png" alt="" /><text>收款</text>
+			</view>
+			<view class="img-box" bindtap="showMask" data-num="{{1}}" style="background-color:{{backGroundColorList[1].index}}">
+				<image src="../../images/icon_study.png" alt="" /><text>奖学金</text>
+			</view>
+			<view class="img-box" bindtap="showMask" data-num="{{2}}" style="background-color:{{backGroundColorList[2].index}}">
+				<image src="../../images/icon_winning.png" alt="" /><text>比赛奖金</text>
+			</view>
+			<view class="img-box" bindtap="showMask" data-num="{{3}}" style="background-color:{{backGroundColorList[3].index}}">
+				<image src="../../images/icon_salary.png" alt="" /><text>退税</text>
+			</view>
+			<view class="img-box" bindtap="showMask" data-num="{{4}}" style="background-color:{{backGroundColorList[4].index}}">
+				<image src="../../images/icon_daily.png" alt="" /><text>其他</text>
+			</view>
+		</view>
+		<!--名字输入框-->
+		<van-field model:value="{{ inputNameValue }}" placeholder="请输入名字"  hold-keyboard="true" focus="true" >
+			<image slot="left-icon" src="../../images/name.png"></image>
+		</van-field>
+		<!--数目输入框-->
+		<van-field model:value="{{ inputMoneyValue }}" placeholder="请输入数目" type="number" hold-keyboard="true" focus="true">
+			<image slot="left-icon" src="../../images/money.png"></image>
+		</van-field>
+		<!--日历选择器-->
+		<view class="datetime">
+			<image src="../../images/datetime.png"></image>
+			<text>日期：</text>
+			<van-button class="time-picker" bind:click="showPopup" round hairline>
+			{{time.confirmPickerNYR(currentDate)}}
+			<van-icon name="arrow-down" size="10px" />
+		</van-button>
+		<van-popup show="{{ show }}" bind:close="onClose" position="top">
+			<van-datetime-picker type="date" value="{{ currentDate }}" bind:confirm="onInput" bind:cancel="onClose" />
+		</van-popup>
+		</view>
+		<!--保存按钮-->
+		<van-button type="primary" color="#00A03E" block bindtap="backToDetail">保存</van-button>
+	</van-tab>
+</van-tabs>
+
+<!--引用wxs脚本-->
+<wxs src='../../tool.wxs' module='time'></wxs>
